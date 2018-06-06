@@ -1,5 +1,7 @@
 {
   "name": "bitexchange",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "mysql2": "^1.5.3"
+  }
 }

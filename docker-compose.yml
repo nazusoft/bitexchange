@@ -1,14 +1,15 @@
 version: "3"
 
 services:
-  mysql:
-    image: "mysql:5.7"
-    volumes:
-      - mysql:/var/lib/mysql/data
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      MYSQL_ROOT_HOST: '%'
 
   app:
     depends_on:
-      - "mysql"
+      - "db"
     build: .
     command: bash start.sh
     ports:
@@ -16,7 +17,9 @@ services:
     volumes:
       - .:/bitexchange
       - gems:/gems
- 
+    links:
+      - db
+
 volumes:
-  mysql:
+  db:
   gems:
