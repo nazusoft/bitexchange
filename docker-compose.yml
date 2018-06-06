@@ -8,8 +8,9 @@ services:
       MYSQL_ROOT_HOST: '%'
 
   app:
+    image: bitexchange:1.0
     depends_on:
-      - "db"
+      - db
     build: .
     command: bash start.sh
     ports:
