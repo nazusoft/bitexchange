@@ -1,0 +1,21 @@
+body {
+  background: image-url("/money-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo{
+  width: 50px;
+  height: auto;
+}
+
+.text-blue{ color: #00A1F1; }
+
+.title-box{
+  margin-top: 7%;
+
+  h1{ font-size: 45px; }
+  .subtitle{ color: white; }
+}
