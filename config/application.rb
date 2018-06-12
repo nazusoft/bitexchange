@@ -18,7 +18,6 @@ module Bitexchange
 
     config.time_zone = 'Brasilia'
     config.active_record.default_timezone = :local
-
     config.i18n.enforce_available_locales = false
     config.i18n.default_locale = :'pt-BR'
   end
