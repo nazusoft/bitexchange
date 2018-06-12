@@ -1,10 +1,13 @@
 {
-  "engines": { "node": ">=6" },
+  "engines": {
+    "node": ">=6"
+  },
   "name": "bitexchange",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
-    "mysql2": "^1.5.3"
+    "mysql2": "^1.5.3",
+    "tether": "^1.4.4"
   }
 }
