@@ -17,5 +17,3 @@ test:
 production:
   <<: *default
   database: bitexchange_production
-  username: bitexchange
-  password: <%= ENV['BITEXCHANGE_DATABASE_PASSWORD'] %>
