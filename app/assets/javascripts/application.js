@@ -16,4 +16,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery-mask-plugin
 //= require_tree .
+
+$.jMaskGlobals.watchDataMask = true
