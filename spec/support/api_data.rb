@@ -3,7 +3,7 @@ RSpec.configure do |config|
 
     stub_request(:get, /currencydatafeed.com/ )
     .with(headers: {
-      'Accept'=>'*/*'
+      'Accept': '*/*'
     }).to_return(status: 200, body:
       '{
         "status":   true,
@@ -16,6 +16,12 @@ RSpec.configure do |config|
           }
         ]
       }', headers: {})
+
+    stub_request(:get, /blockchain.info\/tobtc/ )
+    .with(headers: {
+      'Accept': '*/*'
+    }).to_return(status: 200, body:
+    '0.07749089', headers: {})
 
   end
 end
