@@ -1,5 +1,5 @@
 $(document).ready ->
-  $('#amount').mask('9999999999')
+  $('#amount').mask('0.000.000.000,00', {reverse: true});
 
   $('#amount').keypress (e) ->
     if(e.keyCode == 13)
@@ -23,6 +23,8 @@ $(document).ready ->
 
 exchange = (amount) ->
   loading('result')
+
+  amount = amount.split('.').join('').split(',').join('.')
 
   if $("#source_currency").val() == $("#target_currency").val()
     $('.modal-body').html("<h6 class='text-center'>Você escolheu a mesma moeda para conversão.</h6><h6 class='text-center'>Por favor escolha moedas diferentes.</h6>")
