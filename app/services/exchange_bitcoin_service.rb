@@ -15,6 +15,8 @@ class ExchangeBitcoinService
       res = RestClient.get(url)
 
       value = JSON.parse(res.body)
+
+      value * @amount
     rescue RestClient::ExceptionWithResponse => e
       nil
     end
@@ -26,7 +28,7 @@ class ExchangeBitcoinService
       res   = RestClient.get(url)
       value = JSON.parse(res.body)[@source_currency]
 
-      value ? value['last'] : '-'
+      value ? (value['last'] * @amount) : '-'
     rescue RestClient::ExceptionWithResponse => e
       nil
     end
