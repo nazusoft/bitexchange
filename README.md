@@ -2,6 +2,14 @@
 
 App OpenSource Conversor de Moedas.
 
+Conversor de moedas e bitcoin.
+
+Provedores das informações:
+
+- moedas: currencydatafeed.com
+- bitcoin: blockchain.info
+
+
 ### First Start
 Para iniciar o projeto utilizando docker|docker-compose
 
