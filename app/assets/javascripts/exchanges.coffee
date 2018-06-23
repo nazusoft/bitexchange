@@ -40,8 +40,7 @@ exchange = (amount) ->
       $('#source_currency').val('BRL')
       $('#target_currency').val('EUR')
 
-      $('.modal-body').html("<h6 class='text-center'>Você escolheu a mesma moeda para conversão.</h6><h6 class='text-center'>Por favor escolha moedas diferentes.</h6>")
-      $('#main-modal').modal('toggle')
+      showModal("<h6 class='text-center'>Você escolheu a mesma moeda para conversão.</h6><h6 class='text-center'>Por favor escolha moedas diferentes</h6>")
       clearResult()
       return false;
 
@@ -54,7 +53,9 @@ exchange = (amount) ->
                 amount:          amount
               }
         error: (jqXHR, textStatus, errorThrown) ->
-          alert textStatus
+          showModal("<h6 class='text-center'>" + textStatus + "</h6>")
+          clearResult()
+          return false;
         success: (data, text, jqXHR) ->
           $('#money_result').html("#{data.money_value}".substring(0,10))
           $('#to_bitcoin_result').html("#{data.to_btc_value}".substring(0,10))
@@ -71,3 +72,7 @@ setTargetCurrency = () ->
   $('#money_result_title').html($('#target_currency').val())
   $('#to_bitcoin_result_title').html($('#source_currency').val())
   $('#from_bitcoin_result_title').html($('#source_currency').val())
+
+showModal = (body_text) ->
+  $('.modal-body').html(body_text)
+  $('#main-modal').modal('toggle')
