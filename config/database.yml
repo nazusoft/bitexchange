@@ -2,16 +2,18 @@ default: &default
   adapter:  mysql2
   encoding: utf8
   pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host:     <%= Rails.application.credentials[Rails.env.to_sym][:mysql_host] %>
-  database: <%= Rails.application.credentials[Rails.env.to_sym][:mysql_database] %>
-  username: <%= Rails.application.credentials[Rails.env.to_sym][:mysql_user] %>
-  password: <%= Rails.application.credentials[Rails.env.to_sym][:mysql_pass] %>
+  host:     db
+  username: root
+  password: ''
 
 development:
   <<: *default
+  database: bitexchange_development
 
 test:
   <<: *default
+  database: bitexchange_test
 
 production:
   <<: *default
+  database: bitexchange_development
