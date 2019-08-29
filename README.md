@@ -18,7 +18,11 @@ docker-compose build
 
 docker-compose run --rm app bundle install
 
+docker-compose run --rm app bundle exec rails secret
+
 docker-compose run --rm app bundle exec rails db:create db:migrate
+
+docker-compose run --rm app bundle exec rails assets:precompile
 
 docker-compose up
 ```
